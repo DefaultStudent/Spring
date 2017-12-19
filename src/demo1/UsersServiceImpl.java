@@ -1,5 +1,6 @@
 package demo1;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class UsersServiceImpl implements UsersServices {
 		System.out.println("Hello Spring " + name);
 		userDAO.save();
 
+	}
+	
+	@PostConstruct
+	public void init(){
+		System.out.println("初始化。。。");
 	}
 
 }
